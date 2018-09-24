@@ -48,7 +48,7 @@
             this.cancelButton.Location = new System.Drawing.Point(466, 98);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 0;
+            this.cancelButton.TabIndex = 10;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -59,7 +59,7 @@
             this.saveButton.Location = new System.Drawing.Point(385, 98);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 1;
+            this.saveButton.TabIndex = 9;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.OnSaveButtonClick);
@@ -70,7 +70,7 @@
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
             // label2
@@ -79,7 +79,7 @@
             this.label2.Location = new System.Drawing.Point(13, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 4;
             this.label2.Text = "Connection String";
             // 
             // label3
@@ -88,7 +88,7 @@
             this.label3.Location = new System.Drawing.Point(13, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 7;
             this.label3.Text = "Database Type";
             // 
             // nameTextBox
@@ -96,7 +96,7 @@
             this.nameTextBox.Location = new System.Drawing.Point(122, 10);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(188, 20);
-            this.nameTextBox.TabIndex = 3;
+            this.nameTextBox.TabIndex = 1;
             // 
             // connectionStringTextBox
             // 
@@ -105,7 +105,7 @@
             this.connectionStringTextBox.Location = new System.Drawing.Point(122, 36);
             this.connectionStringTextBox.Name = "connectionStringTextBox";
             this.connectionStringTextBox.Size = new System.Drawing.Size(387, 20);
-            this.connectionStringTextBox.TabIndex = 3;
+            this.connectionStringTextBox.TabIndex = 5;
             // 
             // serverTypeComboBox
             // 
@@ -114,7 +114,7 @@
             this.serverTypeComboBox.Location = new System.Drawing.Point(122, 62);
             this.serverTypeComboBox.Name = "serverTypeComboBox";
             this.serverTypeComboBox.Size = new System.Drawing.Size(244, 21);
-            this.serverTypeComboBox.TabIndex = 16;
+            this.serverTypeComboBox.TabIndex = 8;
             // 
             // deleteButton
             // 
@@ -123,7 +123,7 @@
             this.deleteButton.Location = new System.Drawing.Point(397, 9);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(80, 23);
-            this.deleteButton.TabIndex = 1;
+            this.deleteButton.TabIndex = 3;
             this.deleteButton.Text = "Remove";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.OnDeleteButtonClick);
@@ -133,7 +133,7 @@
             this.addButton.Location = new System.Drawing.Point(316, 9);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 17;
+            this.addButton.TabIndex = 2;
             this.addButton.Text = "Create";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.OnAddButtonClick);
@@ -143,7 +143,7 @@
             this.connectionStringButton.Location = new System.Drawing.Point(514, 34);
             this.connectionStringButton.Name = "connectionStringButton";
             this.connectionStringButton.Size = new System.Drawing.Size(27, 23);
-            this.connectionStringButton.TabIndex = 18;
+            this.connectionStringButton.TabIndex = 6;
             this.connectionStringButton.Text = "...";
             this.connectionStringButton.UseVisualStyleBackColor = true;
             this.connectionStringButton.Click += new System.EventHandler(this.OnConnectionStringButtonClick);

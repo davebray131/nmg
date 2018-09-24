@@ -27,10 +27,7 @@ namespace NHibernateMappingGenerator
         {
             InitializeComponent();
             ownersComboBox.SelectedIndexChanged += OwnersSelectedIndexChanged;
-            tablesListBox.SelectedIndexChanged += TablesListSelectedIndexChanged;
-            connectionNameComboBox.SelectedIndexChanged += ConnectionNameSelectedIndexChanged;
             dbTableDetailsGridView.DataError += DataError;
-            connectionButton.Click += ConnectionButtonClick;
             dbTableDetailsGridView.CurrentCellDirtyStateChanged += OnTableDetailsCellDirty;
             BindData();
 
@@ -498,7 +495,9 @@ namespace NHibernateMappingGenerator
             ownersComboBox.Items.AddRange(owners.ToArray());
 
             tablesListBox.SelectedIndexChanged += TablesListSelectedIndexChanged;
-            ownersComboBox.SelectedIndex = 0;
+
+            int index = owners.IndexOf("dbo");
+            ownersComboBox.SelectedIndex = index < 0 ? 0 : index;
         }
 
         private void PopulateTablesAndSequences()
@@ -576,12 +575,14 @@ namespace NHibernateMappingGenerator
             }
             try
             {
+                CaptureApplicationSettings();
+                Inflector.EnableInflection = applicationSettings.EnableInflections;
+
                 foreach (var selectedItem in selectedItems)
                 {
                     toolStripStatusLabel.Text = string.Format("Generating {0} mapping file ...", selectedItem);
                     var table = (Table)selectedItem;
                     metadataReader.GetTableDetails(table, ownersComboBox.SelectedItem.ToString());
-                    CaptureApplicationSettings();
                     Generate(table, selectedItems.Count > 1, applicationSettings);                
                 }
                 toolStripStatusLabel.Text = @"Generated all files successfully.";
@@ -635,6 +636,9 @@ namespace NHibernateMappingGenerator
             var appSettings = e.Argument as ApplicationSettings; 
             var items = tablesListBox.Items;
             var pOptions = new ParallelOptions {MaxDegreeOfParallelism = Environment.ProcessorCount};
+
+            Inflector.EnableInflection = appSettings.EnableInflections;
+
             Parallel.ForEach(items.Cast<Table>(), pOptions, (table, loopState) =>
             {
                 if (worker != null && worker.CancellationPending && !loopState.IsStopped)
